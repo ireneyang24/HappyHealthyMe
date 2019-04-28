@@ -3,4 +3,5 @@
     <color name="colorPrimary">#D6D6E7</color>
     <color name="colorPrimaryDark">#DDDDDD</color>
     <color name="colorAccent">#65A840</color>
+    <color name="noteBox">#BCBCCE</color>
 </resources>
