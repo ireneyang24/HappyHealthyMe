@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 
 public class HomeFragment extends Fragment {
 
-    Button biometricsButton;
-    Button addActivityButton;
+    ImageButton biometricsButton;
+    ImageButton addActivityButton;
     CalendarView calendarView;
     private int currentYear;
     private int currentMonth;

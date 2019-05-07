@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HappyHealthyMe</string>
+    <string name="biometrics">BIOMETRICS</string>
+    <string name="add_event">Add event</string>
 </resources>
