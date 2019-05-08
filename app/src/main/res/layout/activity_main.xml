@@ -22,7 +22,7 @@
 
         <ImageButton
             android:id="@+id/biometrics_button"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@android:drawable/sym_def_app_icon"

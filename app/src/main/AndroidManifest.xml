@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".addActivityActivity"/>
+        <activity android:name=".updateBiometricsActivity" />
     </application>
 
 </manifest>

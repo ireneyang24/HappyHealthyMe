@@ -35,6 +35,16 @@ public class HomeFragment extends Fragment {
         addActivityButton = view.findViewById(R.id.add_activity_button);
         calendarView = view.findViewById(R.id.calendarView);
 
+        biometricsButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = updateBiometricsActivity.newIntent(getActivity(), currentYear, currentMonth, currentDay);
+                startActivity(intent);
+            }
+        });
+
         addActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
