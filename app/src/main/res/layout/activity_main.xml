@@ -22,26 +22,33 @@
 
         <ImageButton
             android:id="@+id/biometrics_button"
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@android:drawable/sym_def_app_icon"
-            android:contentDescription="@string/biometrics"
-            tools:src="@android:drawable/sym_def_app_icon" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_biometrics"
+            android:contentDescription="@string/biometrics" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:gravity="center"
             android:text="@string/app_name" />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
         <ImageButton
             android:id="@+id/add_activity_button"
-            android:layout_width="0dp"
-            android:layout_height="91dp"
-            android:layout_weight="1"
-            android:src="@android:drawable/ic_input_add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:drawable/ic_input_add"
             android:contentDescription="@string/add_event"
             tools:src="@android:drawable/ic_input_add" />
 
