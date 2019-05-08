@@ -2,4 +2,7 @@
     <string name="app_name">HappyHealthyMe</string>
     <string name="biometrics">BIOMETRICS</string>
     <string name="add_event">Add event</string>
+    <string name="title_activity_event">EventActivity</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_date">Event Date</string>
 </resources>
