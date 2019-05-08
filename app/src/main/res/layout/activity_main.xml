@@ -66,8 +66,9 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <!--Placeholder for the RecyclerView, needs to be implemented-->
-    <view
+    <RecyclerView
         class="android.support.v7.app.AlertController$RecycleListView"
+        android:id="@+id/eventRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -79,7 +80,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView">
 
-    </view>
+    </RecyclerView>
 
 
 </android.support.constraint.ConstraintLayout>
