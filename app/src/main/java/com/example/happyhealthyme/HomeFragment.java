@@ -5,6 +5,9 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +15,19 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
 
-    ImageButton biometricsButton;
-    ImageButton addActivityButton;
-    CalendarView calendarView;
+    private ImageButton biometricsButton;
+    private ImageButton addActivityButton;
+    private CalendarView calendarView;
+    private RecyclerView eventRecyclerView;
+    private EventAdapter adapter;
+    private List<Event> eventList = new ArrayList<>();
+
     private int currentYear;
     private int currentMonth;
     private int currentDay;
@@ -34,6 +45,17 @@ public class HomeFragment extends Fragment {
         biometricsButton = view.findViewById(R.id.biometrics_button);
         addActivityButton = view.findViewById(R.id.add_activity_button);
         calendarView = view.findViewById(R.id.calendarView);
+        eventRecyclerView = view.findViewById(R.id.eventRecyclerView);
+
+        adapter = new EventAdapter(eventList);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        eventRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        eventRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        eventRecyclerView.setAdapter(adapter);
+        addTestData(); ////TEST////////
+
+
+
 
         biometricsButton.setOnClickListener(new View.OnClickListener()
         {
@@ -63,5 +85,13 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void addTestData()
+    {
+        Event event = new Event("test1", new Date());
+        eventList.add(event);
+
+        adapter.notifyDataSetChanged();
     }
 }

@@ -19,14 +19,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Event> eventList = new ArrayList<>();
-    private RecyclerView eventRecyclerView;
-    private EventAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fragment);
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
@@ -37,23 +33,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.fragment_container, fragment)
                     .commit();
         }
-        eventRecyclerView = (RecyclerView) findViewById(R.id.eventRecyclerView);
-
-        adapter = new EventAdapter(eventList);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        eventRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        eventRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        eventRecyclerView.setAdapter(adapter);
-
-        addTestData();
-    }
-
-    private void addTestData()
-    {
-        Event event = new Event("test1", new Date());
-        eventList.add(event);
-
-        adapter.notifyDataSetChanged();
     }
 }
 
