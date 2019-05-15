@@ -1,5 +1,7 @@
 package com.example.happyhealthyme;
 
+import android.text.format.DateFormat;
+
 import java.util.Date;
 import java.util.UUID;
 
@@ -26,9 +28,16 @@ public class Event {
         return title;
     }
 
-    public Date getDate()
+    public String getDate()
     {
-        return date;
+//        return date;
+        String dayOfWeek = (String) DateFormat.format("EEEE", date);
+        String day = (String) DateFormat.format("dd", date);
+        String month = (String) DateFormat.format("MMMM", date);
+
+        String result = dayOfWeek + ", " + month + " " + day;
+
+        return result;
     }
 
     public void setTitle(String newTitle)
@@ -36,5 +45,16 @@ public class Event {
         title = newTitle;
     }
 
-
+    // commented out for testing purposes
+//    public String dateString(Date currentDate)
+//    {
+////        Date date = new Date();
+//        String dayOfWeek = (String) DateFormat.format("EEEE", currentDate);
+//        String day = (String) DateFormat.format("dd", currentDate);
+//        String month = (String) DateFormat.format("MMMM", currentDate);
+//
+//        String result = dayOfWeek + ", " + month + " " + day;
+//
+//        return result;
+//    }
 }

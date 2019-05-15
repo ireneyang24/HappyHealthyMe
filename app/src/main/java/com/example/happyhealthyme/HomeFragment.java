@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import android.text.format.DateFormat;
+
 public class HomeFragment extends Fragment {
 
     private ImageButton biometricsButton, addActivityButton;
@@ -99,6 +101,8 @@ public class HomeFragment extends Fragment {
 
     private void addTestData()
     {
+
+
         Event event = new Event("test1", new Date());
         eventList.add(event);
 
