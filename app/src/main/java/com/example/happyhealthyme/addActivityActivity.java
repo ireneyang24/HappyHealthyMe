@@ -116,6 +116,7 @@ public class addActivityActivity extends AppCompatActivity {
                     values.put(HappyHealthyMeDbSchema.ActivitiesTable.Cols.NOTES, newActivityNotes);
                     // Insert the new row
                     db.insert(HappyHealthyMeDbSchema.ActivitiesTable.NAME, null, values);
+                    finish();
                 }
 
             }

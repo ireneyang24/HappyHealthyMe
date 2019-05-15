@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import java.util.Date;
+
 public class updateBiometricsActivity extends AppCompatActivity {
     private static final String EXTRA_YEAR = "com.happyhealthyme.year";
     private static final String EXTRA_MONTH = "com.happyhealthyme.month";
@@ -53,6 +55,8 @@ public class updateBiometricsActivity extends AppCompatActivity {
         if (!(year ==0 && month == 0 && day == 0)) //by default, the date on the picker is set to the current date, so unless we pass all 0's to this function, which means the previous screen didnt change the date, we update the datepicker
             datePicker.updateDate(year, month, day);
 
+        datePicker.setMaxDate(new Date().getTime());
+
         //probably want to add something here that reads the database and fills the biometric fields if data is present for this date
 
         recordBiometricsButton.setOnClickListener(new View.OnClickListener()
@@ -61,6 +65,7 @@ public class updateBiometricsActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 String dateOfEntry = datePicker.getMonth() + "/" + datePicker.getDayOfMonth() + "/" + datePicker.getYear();
+
                 String weight = weightEditText.getText().toString();
                 String height = heightEditText.getText().toString();
                 String sleep = sleepEditText.getText().toString();
@@ -87,6 +92,7 @@ public class updateBiometricsActivity extends AppCompatActivity {
                     values.put(HappyHealthyMeDbSchema.BiometricsTable.Cols.SLEEP, sleep);
                     // Insert the new row
                     db.insert(HappyHealthyMeDbSchema.BiometricsTable.NAME, null, values);
+                    finish();
                 }
             }
         });

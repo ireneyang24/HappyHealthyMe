@@ -25,6 +25,7 @@ public class HomeFragment extends Fragment {
     private ImageButton addActivityButton;
     private CalendarView calendarView;
     private RecyclerView eventRecyclerView;
+    private Button graphButton;
     private EventAdapter adapter;
     private List<Event> eventList = new ArrayList<>();
 
@@ -54,7 +55,7 @@ public class HomeFragment extends Fragment {
         eventRecyclerView.setAdapter(adapter);
         addTestData(); ////TEST////////
 
-
+        graphButton = view.findViewById(R.id.graphButton);
 
 
         biometricsButton.setOnClickListener(new View.OnClickListener()
@@ -81,6 +82,16 @@ public class HomeFragment extends Fragment {
                 currentYear = year;
                 currentMonth = month;
                 currentDay = dayOfMonth;
+            }
+        });
+
+        graphButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = viewGraphsActivity.newIntent(getActivity());
+                startActivity(intent);
             }
         });
 

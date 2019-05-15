@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".addActivityActivity" />
         <activity android:name=".updateBiometricsActivity" />
+        <activity android:name=".viewGraphsActivity"/>
     </application>
 
 </manifest>

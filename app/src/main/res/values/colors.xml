@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#DDDDDD</color>
     <color name="colorAccent">#65A840</color>
     <color name="noteBox">#BCBCCE</color>
+    <color name="lineGraphWeight">#FF4444</color>
 </resources>
