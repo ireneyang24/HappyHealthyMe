@@ -25,7 +25,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public EventAdapter(List<Event> otherEventList)
     {
-        eventList = otherEventList;
+        this.eventList = otherEventList;
     }
 
     @Override

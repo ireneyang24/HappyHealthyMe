@@ -21,8 +21,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private ImageButton biometricsButton;
-    private ImageButton addActivityButton;
+    private ImageButton biometricsButton, addActivityButton;
     private CalendarView calendarView;
     private RecyclerView eventRecyclerView;
     private Button graphButton;
