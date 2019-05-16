@@ -30,7 +30,6 @@ public class Event {
 
     public String getDate()
     {
-//        return date;
         String dayOfWeek = (String) DateFormat.format("EEEE", date);
         String day = (String) DateFormat.format("dd", date);
         String month = (String) DateFormat.format("MMMM", date);
