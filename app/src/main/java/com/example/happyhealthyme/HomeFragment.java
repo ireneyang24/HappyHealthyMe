@@ -16,11 +16,7 @@ import android.widget.CalendarView;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-
-import android.text.format.DateFormat;
 
 public class HomeFragment extends Fragment {
 
@@ -81,6 +77,7 @@ public class HomeFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                eventList.clear();
                 currentYear = year;
                 currentMonth = month;
                 currentDay = dayOfMonth;
