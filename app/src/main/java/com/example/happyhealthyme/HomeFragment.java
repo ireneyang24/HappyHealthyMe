@@ -16,6 +16,7 @@ import android.widget.CalendarView;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -30,9 +31,12 @@ public class HomeFragment extends Fragment {
     private EventAdapter adapter;
     private List<Event> eventList = new ArrayList<>();
 
-    private int currentYear;
-    private int currentMonth;
-    private int currentDay;
+    private int currentYear, currentMonth, currentDay;
+
+//    private long calendarViewDate;
+
+    private String date;
+//    private Date date = new Date();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class HomeFragment extends Fragment {
         eventRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         eventRecyclerView.setItemAnimator(new DefaultItemAnimator());
         eventRecyclerView.setAdapter(adapter);
-        addTestData(); ////TEST////////
+         ////TEST////////
 
         graphButton = view.findViewById(R.id.graphButton);
 
@@ -83,8 +87,16 @@ public class HomeFragment extends Fragment {
                 currentYear = year;
                 currentMonth = month;
                 currentDay = dayOfMonth;
+
+                date = currentYear + " " + currentMonth + " " + currentDay;
+//                date = new Date(currentYear, currentMonth, currentDay);
+                System.out.println("*** current year: " + currentYear + " month: " + currentMonth + " day: " + currentDay);
+//                System.out.println(date.toString());
+                addTestData();
             }
         });
+
+
 
         graphButton.setOnClickListener(new View.OnClickListener()
         {
@@ -96,14 +108,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
+//        addTestData();
         return view;
     }
 
+    // for testing purposes
     private void addTestData()
     {
-
-
-        Event event = new Event("test1", new Date());
+//        Date date = new Date(currentYear, currentMonth, currentDay);
+//        Date date = new Date(calendarView.getDate());
+//        Calendar date = Calendar.getInstance();
+        Event event = new Event("test1", date);
+        event.setDate(date);
         eventList.add(event);
 
         adapter.notifyDataSetChanged();
