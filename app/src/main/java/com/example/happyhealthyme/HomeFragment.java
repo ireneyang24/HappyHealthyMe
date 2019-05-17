@@ -2,7 +2,10 @@ package com.example.happyhealthyme;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
+
+import com.github.mikephil.charting.data.Entry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +88,7 @@ public class HomeFragment extends Fragment {
                 currentDay = dayOfMonth;
 
                 date = currentYear + " " + currentMonth + " " + currentDay;
-//                System.out.println("*** current year: " + currentYear + " month: " + currentMonth + " day: " + currentDay);
+
                 addTestData();
             }
         });
@@ -97,6 +102,22 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+//        DataBaseHelper dbHelper = new DataBaseHelper(getActivity().getApplicationContext());
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//
+//        String[] columns = {HappyHealthyMeDbSchema.ActivitiesTable.Cols.NAME, HappyHealthyMeDbSchema.ActivitiesTable.Cols.DATE};
+//
+//        String whereClause = HappyHealthyMeDbSchema.ActivitiesTable.Cols.DATE + " = " + date;
+//
+//        Cursor cursor = db.query(HappyHealthyMeDbSchema.ActivitiesTable.NAME, columns, whereClause, null, null, null, null, null);
+//
+//        while(cursor.moveToNext()){
+//            eventList.add(new Event(HappyHealthyMeDbSchema.ActivitiesTable.NAME, date));
+//        }
+//
+//        adapter.notifyDataSetChanged();
+
 
         return view;
     }
