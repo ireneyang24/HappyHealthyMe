@@ -33,10 +33,7 @@ public class HomeFragment extends Fragment {
 
     private int currentYear, currentMonth, currentDay;
 
-//    private long calendarViewDate;
-
     private String date;
-//    private Date date = new Date();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,14 +86,10 @@ public class HomeFragment extends Fragment {
                 currentDay = dayOfMonth;
 
                 date = currentYear + " " + currentMonth + " " + currentDay;
-//                date = new Date(currentYear, currentMonth, currentDay);
-                System.out.println("*** current year: " + currentYear + " month: " + currentMonth + " day: " + currentDay);
-//                System.out.println(date.toString());
+//                System.out.println("*** current year: " + currentYear + " month: " + currentMonth + " day: " + currentDay);
                 addTestData();
             }
         });
-
-
 
         graphButton.setOnClickListener(new View.OnClickListener()
         {
@@ -108,16 +101,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        addTestData();
         return view;
     }
 
     // for testing purposes
     private void addTestData()
     {
-//        Date date = new Date(currentYear, currentMonth, currentDay);
-//        Date date = new Date(calendarView.getDate());
-//        Calendar date = Calendar.getInstance();
         Event event = new Event("test1", date);
         event.setDate(date);
         eventList.add(event);

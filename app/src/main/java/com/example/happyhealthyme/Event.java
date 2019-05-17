@@ -13,7 +13,6 @@ public class Event {
 
     private UUID id;
     private String title;
-//    private Date date;
     private String date;
 
     public Event(String newTitle, String newDate)
@@ -40,8 +39,6 @@ public class Event {
 
     public void setDate(String newDate)
     {
-//        date.set()
-//        date = new GregorianCalendar(year, month, day);  // found online somewhere that I had create the date like this...
         String convertedDate = dateString(newDate);
         date = convertedDate;
     }
@@ -50,7 +47,6 @@ public class Event {
         title = newTitle;
     }
 
-    // commented out for testing purposes
     public String dateString(String currentDate)
     {
         Scanner scan = new Scanner(currentDate);
@@ -62,19 +58,13 @@ public class Event {
         String monthString = "invalid";
         DateFormatSymbols dfs = new DateFormatSymbols();
         String[] monthList = dfs.getMonths();
+
         if(month >= 0 && month <= 11)
         {
             monthString = monthList[month];
         }
 
-//        System.out.println(" *** " + monthString);
         String result = monthString + " " + day + ", " + year;
-////        Date date = new Date();
-//        String dayOfWeek = (String) DateFormat.format("EEEE", currentDate);
-//        String day = (String) DateFormat.format("dd", currentDate);
-//        String month = (String) DateFormat.format("MMMM", currentDate);
-//
-//        String result = dayOfWeek + ", " + month + " " + day;
 //
         return result;
     }
